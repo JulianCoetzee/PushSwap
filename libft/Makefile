@@ -6,7 +6,7 @@
 #    By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/29 10:05:47 by jcoetzee          #+#    #+#              #
-#    Updated: 2019/06/19 16:56:17 by jcoetzee         ###   ########.fr        #
+#    Updated: 2019/07/26 09:52:16 by jcoetzee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS = ft_atoi.c \
 		ft_isdigit.c\
 		ft_isprint.c\
 		ft_itoa.c\
+		get_next_line.c\
 		ft_lstadd.c\
 		ft_lstdel.c\
 		ft_lstdelone.c\

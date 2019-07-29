@@ -6,12 +6,11 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 14:51:16 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/07/05 08:40:57 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/07/26 09:57:31 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft/libft.h"
+#include "libft.h"
 
 static char	*ft_freejoin_str(char *tmp, char *buf)
 {
