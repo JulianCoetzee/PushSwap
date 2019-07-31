@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:59:40 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/07/26 13:40:28 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/07/31 11:06:27 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ int				is_sorted(int *stack, int size);
 void			free_stacks(t_stacks *stacks);
 void			free_moves(t_moves *moves);
 void			small_sort(t_stacks *stacks);
+/*
+** large_sort.c
+*/
 void			large_sort(t_stacks *stacks);
 /*
 ** apply_instruct.c
