@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:37:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/05 14:50:42 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/06 14:26:04 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,101 @@ int	find_place_in_a(*int stack, int size, int elem, char rot_type)
 		{
 			if (elem > stack[i] && ((i + 1 < size && elem < stack[i + 1] ||
 							i + 1 == size && elem < stack[0])))
-					{
-					place = i + 1;
-					break ;
-					}
-					i++;
+			{
+				place = i + 1;
+				break ;
+			}
+			i++;
 		}
 	}
-		return (find_rot_a(sie, place, rot_type));
+	return (find_rot_a(sie, place, rot_type));
+}
+
+static void	push_back(t_stacks *stacks)
+{
+	int rotn;
+	char *rot_type;
+
+	rotn = 0;
+	ft_strnew(3);
+	while (stacks->stack_b)
+	{
+		rotn = find_place_in_a(stacks->stack_a, stacks->size_a, 
+				stacks->stack_b[0], &rot_typ);
+		while (rotn > 0)
+		{
+			if (ft_strequ(rot_type, "ra"))
+				apply_ra(stacks);
+			else
+				apply_rra(stacks);
+			rotn--;
+		}
+		apply_pa(stacks);
+	}
+	min_first(stacks);
+	free(rot_type);
+}
+
+static void	push_remainder(t_stacks *stacks)
+{
+	int i;
+
+	i  = 0;
+	while (stacks->size_a > 2)
+	{
+		i = find_min(stacks->stack_a, stacks->size_a);
+		if (i == 0)
+			apply_pb(stacks);
+		else if (i <= stacks->size_a / 2)
+			apply_ra(stacks);
+		else if (i > stacks->size_a / 2)
+			apply_rra(stacks)
+	}
+}
+
+static void	do_moves(t_move *moves, t_stacks *stacks)
+{
+	while (moves->a_moves)
+	{
+		if (ft_strequ(moves->rot_a, "ra"))
+			apply_ra(stacks);
+		else
+			apply_rra(stacks);
+		move->a_moves--;
+	}
+	while (moves->b_moves)
+	{
+		if (ft_strequ(moves->rot_b, "rb"))
+			apply_rb(stacks);
+		else
+			apply_rrb(stacks);
+		move->b_moves--;
+	}
+}
+
+void	large_sort(t_stacks *stacks)
+{
+	t_moves *best_moves;
+	int optimal;
+
+	optimal = (stacks->size_a > 200) ? 50 : 2;
+	while (stacks->size_b != 2)
+		apply_pb(stacks);
+	while (stacks->size_a > optimal)
+	{
+		best_moves = least_moves_a_to_b(stacks);
+		while (best_moves->c_moves)
+		{
+			if(ft_strequ(best_moves->rot_c, "rr"))
+				apply_rr(stacks);
+			else
+				apply_rra(stacks);
+			best_moves->c_moves--;
+		}
+		do_moves(best_moves, stacks);
+		apply_pb(stacks);
+		free_moves(best_moves);
+	}
+	push_remainder(stacks);
+	push_back(stacks);
 }
