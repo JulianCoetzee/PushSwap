@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:59:40 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/07/31 11:06:27 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/16 15:22:27 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ typedef	struct	s_moves
 ** void		ft_printstacks(t_stacks *stacks);
 */
 /*
-** build_stack.c
+** build_stacksc
 */
-void			build_stacks(t_stacks *stacks);
+void			check_args(t_stacks *stacks, char **av, int ac);
 /*
 ** free_sort.c
 */
