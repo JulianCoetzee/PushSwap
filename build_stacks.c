@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 13:51:03 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/16 15:33:36 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/19 14:15:59 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	validate _in(char **split, char nbr, int start)
 	if (nbr[i] == '-' || nbr == '+')
 	{
 		if (!(ft_isdigit(nbr[i + 1])))
-				return (0);
+			return (0);
 		i++;
 	}
 	while(nbr && nbr[i] != '\0')
@@ -66,4 +66,46 @@ static int	split_count(char *split)
 	return (count);
 }
 
-static int
+static int	build-stacks(t_stacks *stacks, char **split, int count)
+{
+	int i;
+
+	i = -1;
+
+	stacks->stack_a = (int *)malloc(sizeof(int) * count);
+	stacks->stack_b = (int *)malloc(sizeof(int) * count);
+	stacks->size_a = count;
+	stacks_size_b = 0;
+	while(++i < count)
+	{
+		if (validat_in(split, split[i], i + 1))
+			stacks->stack_a[i] = ft_atoi(split[i]);
+		else
+		{
+			free_stacks(&stacks);
+			ft_putstr_fd("Erro\n", 2);
+			return (0);
+		}
+	}
+	return (1);
+}
+
+void check_args(t_stacks *stacks, char **av, int ac)
+{
+	char **spliti;
+
+	split = NULL;
+	if (ac == 2)
+	{
+		split = ft_strsplit(av[1], ' ');
+		if (!build_stacks(stacks, (av + 1), (ac - 1)))
+		{
+			free_split(&split);
+			exit(1);
+		}
+		free_split(&split);
+	}
+	else if (!build_stacks(stacks, (av + 1), ac-1))
+		exit(1);
+	return ;
+}
