@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:37:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/06 14:26:04 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/20 14:15:13 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	find_place_in_a(*int stack, int size, int elem, char rot_type)
 			i++;
 		}
 	}
-	return (find_rot_a(sie, place, rot_type));
+	return (find_rot_a(size, place, rot));
 }
 
 static void	push_back(t_stacks *stacks)
