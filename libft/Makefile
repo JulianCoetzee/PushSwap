@@ -6,7 +6,7 @@
 #    By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/29 10:05:47 by jcoetzee          #+#    #+#              #
-#    Updated: 2019/07/26 09:52:16 by jcoetzee         ###   ########.fr        #
+#    Updated: 2019/08/23 11:03:25 by jcoetzee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ FLAGS = -Wall -Werror -Wextra
 NAME = libft.a
 
 SRCS = ft_atoi.c \
+	   ft_atoll.c\
 		ft_bzero.c \
 		ft_isalnum.c\
 		ft_isalpha.c\
