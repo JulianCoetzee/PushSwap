@@ -6,12 +6,16 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:59:40 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/19 14:58:28 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/23 14:53:51 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include "../libft/libft.h"
+# define INT_MIN -2147483648
+# define INT_MAX 2147483648
 
 typedef struct	s_stacks
 {
