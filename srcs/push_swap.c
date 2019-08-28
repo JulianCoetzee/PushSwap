@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:39:13 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/07/29 14:50:03 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/28 10:18:45 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stacks = (t_stacks *)malloc(sizeof(t_stacks));
-		build_stacks(stacks, argv[1]);
+		check_args(stacks, argv, argc);
 		sort(stacks);
 		free_stacks(stacks);
 		stacks = NULL;

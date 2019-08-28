@@ -6,7 +6,7 @@
 #    By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/29 10:05:47 by jcoetzee          #+#    #+#              #
-#    Updated: 2019/08/23 11:03:25 by jcoetzee         ###   ########.fr        #
+#    Updated: 2019/08/28 10:10:37 by jcoetzee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,4 +99,4 @@ fclean: clean
 re: fclean all
 
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re

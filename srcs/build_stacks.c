@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 13:51:03 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/19 14:15:59 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/28 10:16:45 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	split_count(char *split)
 	return (count);
 }
 
-static int	build-stacks(t_stacks *stacks, char **split, int count)
+static int	build_stacks(t_stacks *stacks, char **split, int count)
 {
 	int i;
 

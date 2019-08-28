@@ -6,7 +6,7 @@
 #    By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/25 11:43:17 by jcoetzee          #+#    #+#              #
-#    Updated: 2019/08/23 14:57:20 by jcoetzee         ###   ########.fr        #
+#    Updated: 2019/08/28 10:10:12 by jcoetzee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ OBJS_PATH = ./objs/
 OBJS_DIR = objs
 
 CHECKER_SRCS = $(NAME_1).c\
-			   apply_instruct.c\
 			   apply_instruct_check.c\
 			   apply_revrot_check.c\
 			   apply_rot_check.c\
@@ -57,7 +56,7 @@ $(OBJS_DIR):
 	@mkdir $(OBJS_DIR)
 
 libft:
-	@$(MAKE) -C $(LIB_PATH)/ all
+	@$(MAKE) -C $(LIB_PATH)/
 
 $(NAME_1): $(OBJS_DIR) $(CHECKER_O) libft
 	@gcc $(FLAGS) $(CHECKER_O) -L $(LIB_PATH) -lft -o $(NAME_1)
@@ -84,4 +83,4 @@ fclean:
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean libft re
