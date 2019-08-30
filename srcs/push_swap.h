@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:59:40 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/28 10:15:11 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/30 15:03:17 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ typedef	struct	s_moves
 	int			c_moves;
 	int			total;
 	int			elem;
-	char		rot_a;
-	char		rot_b;
-	char		rot_c;
+	char		*rot_a;
+	char		*rot_b;
+	char		*rot_c;
 }				t_moves;
 
 /*
@@ -109,6 +109,6 @@ int				find_rot_b(int len, int pos, char **rot);
 /*
 ** least_moves.c
 */
-t_moves			least_moves_a_to_b(t_stacks *stacks);
+t_moves			*least_moves_a_to_b(t_stacks *stacks);
 
 #endif

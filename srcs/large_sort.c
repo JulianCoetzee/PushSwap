@@ -6,13 +6,13 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:37:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/20 14:15:13 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/30 15:06:01 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_place_in_a(*int stack, int size, int elem, char rot_type)
+int	find_place_in_a(int *stack, int size, int elem, char **rot_type)
 {
 	int i;
 	int place;
@@ -23,14 +23,14 @@ int	find_place_in_a(*int stack, int size, int elem, char rot_type)
 		place = 1;
 	else if (size == 2 && elem < stack [0] && elem > stack[1])
 		place = 0;
-	else if (elem > stack[find_max(stacks, size)] || elem < stack[find_min(stack, size)])
+	else if (elem > stack[find_max(stack, size)] || elem < stack[find_min(stack, size)])
 		place = find_min(stack, size);
 	else
 	{
 		while (i < size)
 		{
-			if (elem > stack[i] && ((i + 1 < size && elem < stack[i + 1] ||
-							i + 1 == size && elem < stack[0])))
+			if (elem > stack[i] && ((i + 1 < size && elem < stack[i + 1]) ||
+							(i + 1 == size && elem < stack[0])))
 			{
 				place = i + 1;
 				break ;
@@ -38,7 +38,7 @@ int	find_place_in_a(*int stack, int size, int elem, char rot_type)
 			i++;
 		}
 	}
-	return (find_rot_a(size, place, rot));
+	return (find_rot_a(size, place, rot_type));
 }
 
 static void	push_back(t_stacks *stacks)
@@ -51,7 +51,7 @@ static void	push_back(t_stacks *stacks)
 	while (stacks->stack_b)
 	{
 		rotn = find_place_in_a(stacks->stack_a, stacks->size_a, 
-				stacks->stack_b[0], &rot_typ);
+				stacks->stack_b[0], &rot_type);
 		while (rotn > 0)
 		{
 			if (ft_strequ(rot_type, "ra"))
@@ -79,11 +79,11 @@ static void	push_remainder(t_stacks *stacks)
 		else if (i <= stacks->size_a / 2)
 			apply_ra(stacks);
 		else if (i > stacks->size_a / 2)
-			apply_rra(stacks)
+			apply_rra(stacks);
 	}
 }
 
-static void	do_moves(t_move *moves, t_stacks *stacks)
+static void	do_moves(t_moves *moves, t_stacks *stacks)
 {
 	while (moves->a_moves)
 	{
@@ -91,7 +91,7 @@ static void	do_moves(t_move *moves, t_stacks *stacks)
 			apply_ra(stacks);
 		else
 			apply_rra(stacks);
-		move->a_moves--;
+		moves->a_moves--;
 	}
 	while (moves->b_moves)
 	{
@@ -99,7 +99,7 @@ static void	do_moves(t_move *moves, t_stacks *stacks)
 			apply_rb(stacks);
 		else
 			apply_rrb(stacks);
-		move->b_moves--;
+		moves->b_moves--;
 	}
 }
 

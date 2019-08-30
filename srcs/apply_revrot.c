@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:45:45 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/20 13:53:35 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/08/30 14:18:55 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	apply_rra(t_stacks *stacks)
 	int i;
 	int tmp;
 
-	if (stacks->stack_a < 2)
+	if (stacks->size_a < 2)
 		return ;
 
 	i = stacks->size_a - 1;
@@ -36,7 +36,7 @@ void	apply_rrb(t_stacks *stacks)
 	int i;
 	int tmp;
 
-	if (stacks->stack_b < 2)
+	if (stacks->size_b < 2)
 		return ;
 
 	i = stacks->size_b - 1;
@@ -55,7 +55,7 @@ void	apply_rrr(t_stacks *stacks)
 	int i;
 	int tmp;
 
-	if (stacks->stack_a > 1)
+	if (stacks->size_a > 1)
 	{
 		i = stacks->size_a - 1;
 		tmp = stacks->stack_a[i];
@@ -63,7 +63,7 @@ void	apply_rrr(t_stacks *stacks)
 			stacks->stack_a[i + 1] = stacks->stack_a[i];
 		stacks->stack_a[0] = tmp;
 	}
-	if (stacks->stack_b > 1)
+	if (stacks->size_b > 1)
 	{
 		i = stacks->size_b - 1;
 		tmp = stacks->stack_b[i];
