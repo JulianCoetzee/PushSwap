@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:49:53 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/30 15:12:59 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:28:32 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,11 @@ t_moves	*least_moves_a_to_b(t_stacks *stacks)
 			least = moves;
 		else if (least->total > moves->total)
 		{
-			free_moves(least);
+			free_moves(&least);
 			least = moves;
 		}
 		else
-			free_moves(moves);
+			free_moves(&moves);
 		i++;
 	}
 	return (least);

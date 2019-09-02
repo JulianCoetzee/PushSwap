@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:59:40 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/30 15:03:17 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:50:16 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,14 @@ typedef	struct	s_moves
 */
 void			check_args(t_stacks *stacks, char **av, int ac);
 /*
-** sort_free.c
+** _frees.c
 */
 int				is_sorted(int *stack, int size);
-void			free_stacks(t_stacks *stacks);
-void			free_moves(t_moves *moves);
+void			free_stacks(t_stacks **stacks);
+void			free_moves(t_moves **moves);
+/*
+** small_sort.c
+*/
 void			sort(t_stacks *stacks);
 /*
 ** large_sort.c

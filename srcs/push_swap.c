@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:39:13 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/28 10:18:45 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:59:42 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
  ** for testing-- delete later
  */
-void	ft_ptint_stacks(t_stacks *stacks)
+void	ft_print_stacks(t_stacks *stacks)
 {
 	int i;
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 		stacks = (t_stacks *)malloc(sizeof(t_stacks));
 		check_args(stacks, argv, argc);
 		sort(stacks);
-		free_stacks(stacks);
+		free_stacks(&stacks);
 		stacks = NULL;
 	}
 	return (0);

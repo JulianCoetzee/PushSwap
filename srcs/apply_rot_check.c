@@ -6,13 +6,13 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:46:21 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/20 13:38:18 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:39:49 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	apply_ra(t_stacks *stacks)
+void	apply_ra_ch(t_stacks *stacks)
 {
 	int i;
 	int tmp;
@@ -30,7 +30,7 @@ void	apply_ra(t_stacks *stacks)
 	stacks->stack_a[i - 1] = tmp;
 }
 
-void	apply_rb(t_stacks *stacks)
+void	apply_rb_ch(t_stacks *stacks)
 {
 	int i;
 	int tmp;
@@ -48,7 +48,7 @@ void	apply_rb(t_stacks *stacks)
 	stacks->stack_b[i - 1] = tmp;
 }
 
-void	apply_rr(t_stacks *stacks)
+void	apply_rr_ch(t_stacks *stacks)
 {
 	int i;
 	int tmp;

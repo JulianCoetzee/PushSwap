@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:38:44 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/28 11:53:00 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:38:30 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	get_ins(t_stacks *stacks)
 		if (do_ins(stacks, ins))
 		{
 			ft_putstr_fd("Error\n", 2);
-			free_stacks(stacks);
+			free_stacks(&stacks);
 			ft_strdel(&ins);
 			exit(1);
 		}
@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 		}
 		else
 			ft_putstr("KO\n");
-		free_stacks(stacks);
+		free_stacks(&stacks);
 	}
 	return (0);
 }

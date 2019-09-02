@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:43:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/02 14:37:54 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:32:15 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	find_min(int *stack, int size)
 	return (mi);
 }
 
-int	fin_max(int *stack, int size)
+int	find_max(int *stack, int size)
 {
 	int i;
 	int mi;
@@ -42,7 +42,7 @@ int	fin_max(int *stack, int size)
 	i = 0;
 	mi = 0;
 	max = stack[i];
-	while (i < max)
+	while (i < size)
 	{
 		if (stack[i] > max)
 		{
@@ -54,7 +54,7 @@ int	fin_max(int *stack, int size)
 	return (mi);
 }
 
-void	min_first(t_stacks stacks)
+void	min_first(t_stacks *stacks)
 {
 	int min;
 

@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:37:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/30 15:06:01 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:27:23 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	large_sort(t_stacks *stacks)
 		}
 		do_moves(best_moves, stacks);
 		apply_pb(stacks);
-		free_moves(best_moves);
+		free_moves(&best_moves);
 	}
 	push_remainder(stacks);
 	push_back(stacks);
