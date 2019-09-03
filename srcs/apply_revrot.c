@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:45:45 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/30 14:18:55 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/03 11:33:19 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	apply_rra(t_stacks *stacks)
 		i--;
 	}
 	stacks->stack_a[0] = tmp;
-	ft_putstr("rrr\n");
+	ft_putstr("rra\n");
 }
 
 void	apply_rrb(t_stacks *stacks)
@@ -74,5 +74,5 @@ void	apply_rrr(t_stacks *stacks)
 		}
 		stacks->stack_b[0] = tmp;
 	}
-	ft_putstr("rrb\n");
+	ft_putstr("rrr\n");
 }

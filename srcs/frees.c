@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:47:07 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:48:25 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/03 14:06:55 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int		is_sorted(int *stack, int size)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	while (i < size)
 	{
-		if (stack[i] > stack[i + 1])
+		if (stack[i - 1] > stack[i])
 			return (0);
 		i++;
 	}

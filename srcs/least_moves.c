@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:49:53 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:28:32 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/03 11:35:19 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	find_place_b(int *stack, int size, int elem, char **rot)
 	i = 0;
 	place = 0;
 	if (size == 2 && elem > stack [0] && elem < stack[1])
-		place = 1;
-	else if (size == 2 && elem < stack [0] && elem > stack[1])
 		place = 0;
+	else if (size == 2 && elem < stack [0] && elem > stack[1])
+		place = 1;
 	else if (elem > stack[find_max(stack, size)] || elem < stack[find_min(stack, size)])
 		place = find_min(stack, size);
 	else

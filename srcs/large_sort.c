@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:37:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:27:23 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/03 14:01:32 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ static void	push_back(t_stacks *stacks)
 	char *rot_type;
 
 	rotn = 0;
-	ft_strnew(3);
-	while (stacks->stack_b)
+	rot_type = ft_strnew(3);
+	while (stacks->size_b > 0)
 	{
 		rotn = find_place_in_a(stacks->stack_a, stacks->size_a, 
 				stacks->stack_b[0], &rot_type);
