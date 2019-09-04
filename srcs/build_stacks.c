@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 13:51:03 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 11:45:18 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/04 13:57:11 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int	build_stacks(t_stacks *stacks, char **split, int count)
 	i = -1;
 
 	stacks->stack_a = (int *)malloc(sizeof(int) * count);
-	stacks->stack_b = (int *)malloc(sizeof(int) * count);
+	stacks->stack_b = (int *)ft_memalloc(sizeof(int) * count);
 	stacks->size_a = count;
 	stacks->size_b = 0;
 	while(++i < count)
