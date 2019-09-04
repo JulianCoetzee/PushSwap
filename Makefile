@@ -6,7 +6,7 @@
 #    By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/25 11:43:17 by jcoetzee          #+#    #+#              #
-#    Updated: 2019/09/02 14:05:44 by jcoetzee         ###   ########.fr        #
+#    Updated: 2019/09/04 08:59:42 by jcoetzee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,11 +61,11 @@ libft:
 
 $(NAME_1): $(OBJS_DIR) $(CHECKER_O) libft
 	@gcc $(FLAGS) $(CHECKER_O) -L $(LIB_PATH) -lft -o $(NAME_1)
-	@echo "NAME_1 created"
+	@echo "$(NAME_1) created"
 	
 $(NAME_2): $(OBJS_DIR) $(PUSH_SWAP_O) libft
 	@gcc $(FLAGS) $(PUSH_SWAP_O) -L $(LIB_PATH) -lft -o $(NAME_2) -g
-	@echo "NAME_2 created"
+	@echo "$(NAME_2) created"
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	@gcc $(FLAGS) -c $< -o $@
