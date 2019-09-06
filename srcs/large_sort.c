@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:37:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/04 11:34:24 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/06 12:33:10 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void	large_sort(t_stacks *stacks)
 			if(ft_strequ(best_moves->rot_c, "rr"))
 				apply_rr(stacks);
 			else
-				apply_rra(stacks);
+				apply_rrr(stacks);
 			best_moves->c_moves--;
 		}
 		do_moves(best_moves, stacks);

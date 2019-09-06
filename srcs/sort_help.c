@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:43:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:32:15 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/06 12:23:19 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	min_first(t_stacks *stacks)
 	int min;
 
 	min = find_min(stacks->stack_a, stacks->size_a);
-	if (min <= stacks->size_a/2)
+	if (min <= stacks->size_a / 2)
 	{
 		while (min--)
 			apply_ra(stacks);

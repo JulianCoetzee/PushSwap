@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:49:53 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/04 11:35:05 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/06 14:27:25 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ static int	find_place_b(int *stack, int size, int elem, char **rot)
 	else if (size == 2 && elem < stack[0] && elem > stack[1])
 		place = 1;
 	else if (elem > stack[find_max(stack, size)] || elem < stack[find_min(stack, size)])
-		place = find_min(stack, size);
+		place = find_max(stack, size);
 	else
 	{
 		while (i < size)
 		{
-			if (elem > stack[i] && ((i + 1 < size && elem < stack[i + 1]) ||
-							(i + 1 == size && elem < stack[0])))
+			if (elem < stack[i] && ((i + 1 < size && elem > stack[i + 1]) ||
+							(i + 1 == size && elem > stack[0])))
 			{
 				place = i + 1;
 				break ;
@@ -38,7 +38,7 @@ static int	find_place_b(int *stack, int size, int elem, char **rot)
 			i++;
 		}
 	}
-	return (find_rot_a(size, place, rot));
+	return (find_rot_b(size, place, rot));
 }
 
 static int	(find_common(t_moves *moves))
@@ -46,8 +46,8 @@ static int	(find_common(t_moves *moves))
 	int c;
 
 	c = 0;
-	if (((ft_strequ(moves->rot_a, "rra") && ft_strequ(moves->rot_b, "rrb"))) ||
-			(ft_strequ(moves->rot_a, "ra") && ft_strequ(moves->rot_b, "rb")))
+	if ((ft_strequ(moves->rot_a, "rra") && (ft_strequ(moves->rot_b, "rrb"))) ||
+			(ft_strequ(moves->rot_a, "ra") && (ft_strequ(moves->rot_b, "rb"))))
 	{
 		c = (moves->a_moves > moves->b_moves ? moves->b_moves : moves->a_moves);
 		if (c)
