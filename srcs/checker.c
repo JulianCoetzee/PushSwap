@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:38:44 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:38:30 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:30:24 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static int	do_ins(t_stacks *stacks, char *ins)
 		if (do_rr(stacks, ins))
 			return (-1);
 	}
-
 	else if (ft_strequ(ins, "sa"))
 		apply_sa_ch(stacks);
 	else if (ft_strequ(ins, "sb"))
@@ -72,11 +71,11 @@ static void	get_ins(t_stacks *stacks)
 	}
 }
 
-int	main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_stacks	*stacks;
 
-	if(argc > 1)
+	if (argc > 1)
 	{
 		stacks = (t_stacks *)malloc(sizeof(t_stacks));
 		check_args(stacks, argv, argc);

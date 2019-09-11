@@ -6,13 +6,13 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:49:53 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/06 14:27:25 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:45:10 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_place_b(int *stack, int size, int elem, char **rot)
+static int		find_place_b(int *stack, int size, int elem, char **rot)
 {
 	int i;
 	int place;
@@ -23,25 +23,24 @@ static int	find_place_b(int *stack, int size, int elem, char **rot)
 		place = 0;
 	else if (size == 2 && elem < stack[0] && elem > stack[1])
 		place = 1;
-	else if (elem > stack[find_max(stack, size)] || elem < stack[find_min(stack, size)])
+	else if (elem > stack[find_max(stack, size)] ||
+			elem < stack[find_min(stack, size)])
 		place = find_max(stack, size);
 	else
-	{
 		while (i < size)
 		{
 			if (elem < stack[i] && ((i + 1 < size && elem > stack[i + 1]) ||
-							(i + 1 == size && elem > stack[0])))
+						(i + 1 == size && elem > stack[0])))
 			{
 				place = i + 1;
 				break ;
 			}
 			i++;
 		}
-	}
 	return (find_rot_b(size, place, rot));
 }
 
-static int	(find_common(t_moves *moves))
+static int		find_common(t_moves *moves)
 {
 	int c;
 
@@ -78,9 +77,9 @@ static t_moves	*calc_moves_a_to_b(t_stacks *stacks, int pos)
 	return (moves);
 }
 
-t_moves	*least_moves_a_to_b(t_stacks *stacks)
+t_moves			*least_moves_a_to_b(t_stacks *stacks)
 {
-	int i;
+	int		i;
 	t_moves *least;
 	t_moves *moves;
 

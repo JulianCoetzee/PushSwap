@@ -6,13 +6,13 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 14:37:49 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/06 12:33:10 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:36:54 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_place_in_a(int *stack, int size, int elem, char **rot_type)
+int			find_place_in_a(int *stack, int size, int elem, char **rot_type)
 {
 	int i;
 	int place;
@@ -23,10 +23,10 @@ int	find_place_in_a(int *stack, int size, int elem, char **rot_type)
 		place = 1;
 	else if (size == 2 && elem < stack[0] && elem > stack[1])
 		place = 0;
-	else if (elem > stack[find_max(stack, size)] || elem < stack[find_min(stack, size)])
+	else if (elem > stack[find_max(stack, size)] ||
+			elem < stack[find_min(stack, size)])
 		place = find_min(stack, size);
 	else
-	{
 		while (i < size)
 		{
 			if (elem > stack[i] && ((i + 1 < size && elem < stack[i + 1]) ||
@@ -37,20 +37,19 @@ int	find_place_in_a(int *stack, int size, int elem, char **rot_type)
 			}
 			i++;
 		}
-	}
 	return (find_rot_a(size, place, rot_type));
 }
 
 static void	push_back(t_stacks *stacks)
 {
-	int rotn;
-	char *rot_type;
+	int		rotn;
+	char	*rot_type;
 
 	rotn = 0;
 	rot_type = ft_strnew(3);
-	while (stacks->size_b > 0)
+	while (stacks->size_b)
 	{
-		rotn = find_place_in_a(stacks->stack_a, stacks->size_a, 
+		rotn = find_place_in_a(stacks->stack_a, stacks->size_a,
 				stacks->stack_b[0], &rot_type);
 		while (rotn > 0)
 		{
@@ -70,7 +69,7 @@ static void	push_remainder(t_stacks *stacks)
 {
 	int i;
 
-	i  = 0;
+	i = 0;
 	while (stacks->size_a > 2)
 	{
 		i = find_min(stacks->stack_a, stacks->size_a);
@@ -103,10 +102,10 @@ static void	do_moves(t_moves *moves, t_stacks *stacks)
 	}
 }
 
-void	large_sort(t_stacks *stacks)
+void		large_sort(t_stacks *stacks)
 {
 	t_moves *best_moves;
-	int optimal;
+	int		optimal;
 
 	optimal = (stacks->size_a > 200) ? 50 : 2;
 	while (stacks->size_b != 2)
@@ -116,7 +115,7 @@ void	large_sort(t_stacks *stacks)
 		best_moves = least_moves_a_to_b(stacks);
 		while (best_moves->c_moves)
 		{
-			if(ft_strequ(best_moves->rot_c, "rr"))
+			if (ft_strequ(best_moves->rot_c, "rr"))
 				apply_rr(stacks);
 			else
 				apply_rrr(stacks);

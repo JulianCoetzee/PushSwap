@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 10:41:09 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:44:40 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:55:26 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	sort_3(t_stacks *stacks)
 		apply_sa(stacks);
 }
 
-void	sort(t_stacks *stacks)
+void		sort(t_stacks *stacks)
 {
 	if (is_sorted(stacks->stack_a, stacks->size_a) && stacks->size_b == 0)
 		return ;

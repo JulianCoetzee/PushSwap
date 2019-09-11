@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:59:40 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:50:16 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:53:09 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ typedef	struct	s_moves
 	char		*rot_c;
 }				t_moves;
 
-/*
-** void		ft_printstacks(t_stacks *stacks);
-*/
 /*
 ** build_stacks.c
 */

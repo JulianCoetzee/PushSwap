@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:45:56 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/30 14:19:50 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:17:50 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	apply_rra_ch(t_stacks *stacks)
 
 	if (stacks->size_a < 2)
 		return ;
-
 	i = stacks->size_a - 1;
 	tmp = stacks->stack_a[i];
 	while (i > 0)
@@ -37,7 +36,6 @@ void	apply_rrb_ch(t_stacks *stacks)
 
 	if (stacks->size_b < 2)
 		return ;
-
 	i = stacks->size_b - 1;
 	tmp = stacks->stack_b[i];
 	while (i > 0)

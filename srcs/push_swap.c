@@ -6,15 +6,16 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:39:13 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/09/02 10:59:42 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:51:12 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
- ** for testing-- delete later
- */
+** for testing-- delete later
+*/
+
 void	ft_print_stacks(t_stacks *stacks)
 {
 	int i;
@@ -28,14 +29,14 @@ void	ft_print_stacks(t_stacks *stacks)
 	}
 	i = 0;
 	ft_putendl("stack b:");
-	while(i < stacks->size_b)
+	while (i < stacks->size_b)
 	{
 		ft_putnbr(stacks->stack_b[i++]);
 		ft_putchar('\n');
 	}
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	t_stacks *stacks;
 
@@ -45,7 +46,6 @@ int	main(int argc, char **argv)
 		check_args(stacks, argv, argc);
 		sort(stacks);
 		free_stacks(&stacks);
-		stacks = NULL;
 	}
 	return (0);
 }

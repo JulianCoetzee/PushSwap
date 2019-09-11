@@ -6,7 +6,7 @@
 /*   By: jcoetzee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 11:45:06 by jcoetzee          #+#    #+#             */
-/*   Updated: 2019/08/30 14:14:38 by jcoetzee         ###   ########.fr       */
+/*   Updated: 2019/09/11 08:11:27 by jcoetzee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	apply_pa(t_stacks *stacks)
 {
 	int i;
 
-	if(stacks->size_b == 0)
+	if (stacks->size_b == 0)
 		return ;
 	i = stacks->size_a;
 	while (i--)
@@ -77,7 +77,7 @@ void	apply_pb(t_stacks *stacks)
 {
 	int i;
 
-	if(stacks->size_a == 0)
+	if (stacks->size_a == 0)
 		return ;
 	i = stacks->size_b;
 	while (i--)
